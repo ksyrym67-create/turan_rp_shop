@@ -1,7 +1,7 @@
 import telebot
 from telebot import types
 
-TOKEN = "8847459600:AAHGumOVORInFOTMXxysy"
+TOKEN = "8847459600:AAHGumOVORInFOTMXxysYG4mG-SwH1BKsbc"
 KASPI = "+77076836915"
 
 bot = telebot.TeleBot(TOKEN)
