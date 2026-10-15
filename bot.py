@@ -1,7 +1,4 @@
-import telebot
-from telebot import types
-
-TOKEN = "8301432282:AAF3FfWk3zRjV1A5bT5y7x8z9a0b1c2d3e4f"
+8847459600:AAHGumOVORInFOTMXxysYG4mG-SwH1BKsbc
 bot = telebot.TeleBot(TOKEN)
 
 ADMIN_NUMBER = "+77076836915"
@@ -24,4 +21,4 @@ def callback(call):
     elif call.data == "zam":
         text = f"👮 *Зам Основатель*\nБағасы: 1200 тг\n\nСатып алу үшін жаз:\n📞 {ADMIN_NUMBER}\nWhatsApp: https://wa.me/77076836915"
     elif call.data == "osn":
-        text = f"👑 *Осн*\nБағасы: 1500 тг\n\nСатып алу үшін жаз:\n📞 {ADMIN_NUMBER}\nWhatsApp: https://wa.me/77076836915"
+        text = f"👑 *Осн*\nБағасы: 1500 тг\n\nСатып алу үшін жаз:\n📞 {
