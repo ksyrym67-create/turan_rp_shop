@@ -1,4 +1,4 @@
-import telebot
+ import telebot
 from telebot import types
 import os
 from threading import Thread
@@ -48,4 +48,8 @@ def buy(c):
     if not p: return
     kb=types.InlineKeyboardMarkup()
     kb.add(types.InlineKeyboardButton("💳 Сатып алу / Жазу", url=f"https://t.me/{ADMIN.replace('@','')}"))
-    text=f"**{p['name']}**\n\n💵 Бағасы: {p['price']}\n📝 {p['desc']}\n\nСатып алу үшін админге жаз:\n{ADMIN}\n\nТөлем
+    text=f"**{p['name']}**\n\n💵 Бағасы: {p['price']}\n📝 {p['desc']}\n\nСатып алу үшін админге жаз:\n{ADMIN}\n\nТөлем Kaspi / Halyk\nID-ң: `{c.from_user.id}`"
+    bot.send_message(c.message.chat.id, text, reply_markup=kb, parse_mode="Markdown")
+    bot.answer_callback_query(c.id)
+
+bot.infinity_polling()
