@@ -1,4 +1,7 @@
-8847459600:AAHGumOVORInFOTMXxysYG4mG-SwH1BKsbc
+import telebot
+from telebot import types
+
+TOKEN = "8847459600:AAHGumOVORInFOTMXxysYG4mG-SwH1BKsbc" 
 bot = telebot.TeleBot(TOKEN)
 
 ADMIN_NUMBER = "+77076836915"
@@ -21,4 +24,10 @@ def callback(call):
     elif call.data == "zam":
         text = f"👮 *Зам Основатель*\nБағасы: 1200 тг\n\nСатып алу үшін жаз:\n📞 {ADMIN_NUMBER}\nWhatsApp: https://wa.me/77076836915"
     elif call.data == "osn":
-        text = f"👑 *Осн*\nБағасы: 1500 тг\n\nСатып алу үшін жаз:\n📞 {
+        text = f"👑 *Осн*\nБағасы: 1500 тг\n\nСатып алу үшін жаз:\n📞 {ADMIN_NUMBER}\nWhatsApp: https://wa.me/77076836915"
+    
+    markup = types.InlineKeyboardMarkup()
+    markup.add(types.InlineKeyboardButton(text="📲 WhatsApp-қа жазу", url="https://wa.me/77076836915"))
+    bot.send_message(call.message.chat.id, text, parse_mode="Markdown", reply_markup=markup)
+
+bot.infinity_polling()
