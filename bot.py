@@ -1,10 +1,10 @@
 import telebot
 from telebot import types
 
-TOKEN = "8847459600:AAHGumOVORInFOTMXxysYG4mG-SwH1BKsbc" 
-bot = telebot.TeleBot(TOKEN)
+TOKEN = "8847459600:AAHGumOVORInFOTMXxysy"
+KASPI_NUMBER = "+77076836915"
 
-ADMIN_NUMBER = "+77076836915"
+bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(commands=['start'])
 def start(message):
@@ -13,21 +13,5 @@ def start(message):
         types.InlineKeyboardButton(text="🛡️ КОМАНДА ПРОЕКТ - 1000 тг", callback_data="komanda"),
         types.InlineKeyboardButton(text="👮 Зам Основатель - 1200 тг", callback_data="zam"),
         types.InlineKeyboardButton(text="👑 Осн - 1500 тг", callback_data="osn"),
-        types.InlineKeyboardButton(text="📞 Админмен байланыс", url=f"https://wa.me/77076836915")
-    )
-    bot.send_message(message.chat.id, f"🎮 *Turan RP Дүкеніне қош келдің!*\n\nТауар таңда:\nАдмин: {ADMIN_NUMBER}", parse_mode="Markdown", reply_markup=markup)
-
-@bot.callback_query_handler(func=lambda call: True)
-def callback(call):
-    if call.data == "komanda":
-        text = f"🛡️ *КОМАНДА ПРОЕКТ*\nБағасы: 1000 тг\n\nСатып алу үшін жаз:\n📞 {ADMIN_NUMBER}\nWhatsApp: https://wa.me/77076836915"
-    elif call.data == "zam":
-        text = f"👮 *Зам Основатель*\nБағасы: 1200 тг\n\nСатып алу үшін жаз:\n📞 {ADMIN_NUMBER}\nWhatsApp: https://wa.me/77076836915"
-    elif call.data == "osn":
-        text = f"👑 *Осн*\nБағасы: 1500 тг\n\nСатып алу үшін жаз:\n📞 {ADMIN_NUMBER}\nWhatsApp: https://wa.me/77076836915"
-    
-    markup = types.InlineKeyboardMarkup()
-    markup.add(types.InlineKeyboardButton(text="📲 WhatsApp-қа жазу", url="https://wa.me/77076836915"))
-    bot.send_message(call.message.chat.id, text, parse_mode="Markdown", reply_markup=markup)
-
-bot.infinity_polling()
+        types.InlineKeyboardButton(text="💳 Каспийге төлеу", callback_data="kaspi"),
+        types.InlineKeyboardButton(text="📞
